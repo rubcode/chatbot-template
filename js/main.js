@@ -1,21 +1,25 @@
 import {getResponseLLM} from './services/chatbot.js'
 const formBot = document.querySelector("#formChatbot");
 
-formBot.addEventListener("submit",function(e){
+formBot.addEventListener("submit",async function(e){
     e.preventDefault();
     const data = new FormData(this);
-    sendQuestion(data)
+    await sendQuestion(data)
     this.reset();
 });
 
-function sendQuestion(data){
+async function sendQuestion(data){
     const question = data.get("txtQuestion");
     if(question != ""){
         const data = {
             "question" : question
         }
-        const response = getResponseLLM(data);
-        renderChatContainer(response)
+        const response = await getResponseLLM(data);
+        if(response.isError){
+            console.log("Ocurrio un error")
+        }
+        const dataResponse = response.data.response
+        renderChatContainer(dataResponse)
 
     }
 }
