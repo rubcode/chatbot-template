@@ -10,31 +10,15 @@
 <body>
     <main>
         <div class="container-chat">
-            <div class="thread-chat">
-                <div class="box-chat user">
-                    <p class="chat-text">¿Qué es Telmex?</p>
-                    <div class="box-avatar">
-                        <div class="avatar">
-                            <img src="src/worker.jpg" alt="User">
-                        </div>
-                        
-                    </div>
-                </div>
-                <div class="box-chat bot">
-                    <div class="box-avatar">
-                        <div class="avatar">
-                            <img src="src/Cablin.png" alt="User">
-                        </div>
-                    </div>
-                    <p class="chat-text">Telmex es una empresa mexicana de telecomunicaciones y servicios de TI que ofrece servicios de Internet, telefonía y streaming, con más de 11 millones de clientes a nivel nacional.</p>
-                </div>
-            </div>
+           
         </div>
         <div class="container-input">
             <h1>GPT Infinitum</h1>
             <div class="box">
-                <input type="text" class="myInput" placeholder="¿En qué puedo ayudarte?">
-                <button type="button"><span class="material-symbols-outlined">send</span></button>
+                <form action="" id="formChatbot">
+                    <input type="text" id="txtQuestion" name="txtQuestion" class="myInput" placeholder="¿En qué puedo ayudarte?">
+                    <button type="submit"><span class="material-symbols-outlined">send</span></button>
+                </form>
             </div>
             <div class="box-faq">
                 <h2>🔷Sugerido</h2>
@@ -46,5 +30,6 @@
             </div>
         </div>
     </main>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
